@@ -1,0 +1,33 @@
+{
+    "name": "hereldar/faker-helper",
+    "type": "library",
+    "description": "Helper package to make it easier to generate fake values.",
+    "keywords": ["faker"],
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/hereldar/php-faker-helper/issues",
+        "source": "https://github.com/hereldar/php-faker-helper"
+    },
+    "authors": [
+        {
+            "name": "Samuel Maudo",
+            "email": "samuelmaudo@gmail.com",
+            "homepage": "https://github.com/samuelmaudo"
+        }
+    ],
+    "require": {
+        "fakerphp/faker": "^1.23"
+    },
+    "autoload": {
+        "files": [
+            "helpers.php"
+        ]
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
