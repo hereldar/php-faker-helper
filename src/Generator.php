@@ -66,6 +66,18 @@ class Generator
     ) {}
 
     /**
+     * Get a value only some percentage of the time.
+     *
+     * @param float $weight A probability between 0 and 1.0 means that we always get the default value
+     */
+    public function optional(float $weight = 0.5, mixed $default = null): OptionalGenerator
+    {
+        $fakerOptionalGenerator = $this->fakerGenerator->optional($weight, $default);
+
+        return new OptionalGenerator($fakerOptionalGenerator);
+    }
+
+    /**
      * With the unique generator you are guaranteed to never get the same two
      * values.
      *

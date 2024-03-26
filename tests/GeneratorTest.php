@@ -28,7 +28,6 @@ final class GeneratorTest extends TestCase
     ];
 
     private const NOT_IMPLEMENTED_METHODS = [
-        'optional',
         'passthrough',
         'randomElements',
         'randomElement',

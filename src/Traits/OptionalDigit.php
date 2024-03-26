@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Hereldar\FakerHelper\Traits;
 
-trait Digit
+trait OptionalDigit
 {
     /**
      * Returns a random number between 0 and 9.
      *
      * @param ?int<0, 9> $except
      */
-    public function digit(?int $except = null): int
+    public function digit(?int $except = null): ?int
     {
         return (null === $except)
             ? $this->fakerGenerator->randomDigit()
@@ -21,7 +21,7 @@ trait Digit
     /**
      * Returns a random number between 1 and 9.
      */
-    public function positiveDigit(): int
+    public function positiveDigit(): ?int
     {
         return $this->fakerGenerator->randomDigitNotNull();
     }
@@ -31,7 +31,7 @@ trait Digit
      *
      * @deprecated
      */
-    public function randomDigit(): int
+    public function randomDigit(): ?int
     {
         return $this->fakerGenerator->randomDigit();
     }
@@ -41,7 +41,7 @@ trait Digit
      *
      * @deprecated
      */
-    public function randomDigitNotNull(): int
+    public function randomDigitNotNull(): ?int
     {
         return $this->fakerGenerator->randomDigitNotNull();
     }
@@ -51,7 +51,7 @@ trait Digit
      *
      * @deprecated
      */
-    public function randomDigitNotZero(): int
+    public function randomDigitNotZero(): ?int
     {
         return $this->fakerGenerator->randomDigitNotZero();
     }
@@ -63,7 +63,7 @@ trait Digit
      *
      * @deprecated
      */
-    public function randomDigitNot(int $except): int
+    public function randomDigitNot(int $except): ?int
     {
         return $this->fakerGenerator->randomDigitNot($except);
     }
