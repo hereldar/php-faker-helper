@@ -6,6 +6,7 @@ namespace Hereldar\FakerHelper\Traits;
 
 use DateInterval;
 use DateTime;
+use DateTimeImmutable;
 use DateTimeInterface;
 use DateTimeZone;
 
@@ -114,7 +115,7 @@ trait Time
      */
     public function dateTimeBetween(DateTimeInterface|int|string $startDate = '-30 years', DateTimeInterface|int|string $endDate = 'now', DateTimeZone|string|null $timezone = null): DateTime
     {
-        return $this->fakerGenerator->dateTimeBetween($this->sanitizeTimestamp($startDate), $this->sanitizeTimestamp($endDate), $this->sanitizeTimeZone($timezone));
+        return $this->fakerGenerator->dateTimeBetween($this->sanitizeDateTime($startDate), $this->sanitizeTimestamp($endDate), $this->sanitizeTimeZone($timezone));
     }
 
     /**
@@ -133,7 +134,7 @@ trait Time
      */
     public function dateTimeInInterval(DateTimeInterface|int|string $date = '-30 years', DateInterval|string $interval = '+5 days', DateTimeZone|string|null $timezone = null): DateTime
     {
-        return $this->fakerGenerator->dateTimeInInterval($this->sanitizeTimestamp($date), $this->sanitizeDateInterval($interval), $this->sanitizeTimeZone($timezone));
+        return $this->fakerGenerator->dateTimeInInterval($this->sanitizeDateTime($date), $this->sanitizeDateInterval($interval), $this->sanitizeTimeZone($timezone));
     }
 
     /**
@@ -280,12 +281,12 @@ trait Time
             return $timestamp;
         }
 
-        if ($timestamp instanceof DateTimeInterface) {
-            return $timestamp->getTimestamp();
-        }
-
         if (\is_numeric($timestamp)) {
             return (int) $timestamp;
+        }
+
+        if ($timestamp instanceof DateTimeInterface) {
+            return $timestamp->getTimestamp();
         }
 
         return \strtotime($timestamp ?: 'now');
@@ -338,5 +339,22 @@ trait Time
         }
 
         return \implode(' + ', $tokens) ?: '0 seconds';
+    }
+
+    private function sanitizeDateTime(DateTimeInterface|int|string $timestamp): DateTime
+    {
+        if ($timestamp instanceof DateTime) {
+            return $timestamp;
+        }
+
+        if ($timestamp instanceof DateTimeImmutable) {
+            return DateTime::createFromImmutable($timestamp);
+        }
+
+        if (\is_int($timestamp) || \is_numeric($timestamp)) {
+            return DateTime::createFromFormat('U', (string) $timestamp);
+        }
+
+        return new DateTime($timestamp ?: 'now');
     }
 }
