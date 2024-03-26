@@ -19,6 +19,11 @@
         "fakerphp/faker": "^1.23",
         "webmozart/assert": "^1.0"
     },
+    "require-dev": {
+        "hereldar/coding-style": "^0.1.0",
+        "phpstan/phpstan": "^1.10",
+        "phpunit/phpunit": "^9.6",
+        "vimeo/psalm": "^0.3.14"
     },
     "autoload": {
         "psr-4": {
@@ -27,6 +32,11 @@
         "files": [
             "src/functions.php"
         ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Hereldar\\FakerHelper\\Tests\\": "tests/"
+        }
     },
     "config": {
         "optimize-autoloader": true,
