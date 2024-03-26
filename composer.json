@@ -16,11 +16,16 @@
         }
     ],
     "require": {
-        "fakerphp/faker": "^1.23"
+        "fakerphp/faker": "^1.23",
+        "webmozart/assert": "^1.0"
+    },
     },
     "autoload": {
+        "psr-4": {
+            "Hereldar\\FakerHelper\\": "src/"
+        },
         "files": [
-            "helpers.php"
+            "src/functions.php"
         ]
     },
     "config": {
