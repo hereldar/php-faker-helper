@@ -5,7 +5,7 @@ declare(strict_types=1);
 use Hereldar\FakerHelper\Factory;
 use Hereldar\FakerHelper\Tests\TestCase;
 
-final class UniqueGeneratorTest extends TestCase
+final class ValidGeneratorTest extends TestCase
 {
     private const EXCLUDED_METHODS = [
         '__construct',
@@ -19,8 +19,8 @@ final class UniqueGeneratorTest extends TestCase
         $generator = Factory::make();
         $generatorReflection = new ReflectionObject($generator);
 
-        $uniqueGenerator = $generator->unique();
-        $uniqueGeneratorReflection = new ReflectionObject($uniqueGenerator);
+        $validGenerator = $generator->valid();
+        $validGeneratorReflection = new ReflectionObject($validGenerator);
 
         foreach ($generatorReflection->getMethods() as $method) {
             $methodName = $method->getName();
@@ -31,15 +31,15 @@ final class UniqueGeneratorTest extends TestCase
                 continue;
             }
 
-            self::assertMethodExists($uniqueGeneratorReflection, $methodName);
+            self::assertMethodExists($validGeneratorReflection, $methodName);
 
             if (0 === $method->getNumberOfRequiredParameters()) {
-                $uniqueGenerator->{$methodName}();
+                $validGenerator->{$methodName}();
             }
 
-            $uniqueMethod = $uniqueGeneratorReflection->getMethod($methodName);
-            self::assertSame($method->getDocComment(), $uniqueMethod->getDocComment());
-            self::assertEquals($method->getParameters(), $uniqueMethod->getParameters());
+            $validMethod = $validGeneratorReflection->getMethod($methodName);
+            self::assertSame($method->getDocComment(), $validMethod->getDocComment());
+            self::assertEquals($method->getParameters(), $validMethod->getParameters());
         }
     }
 }
