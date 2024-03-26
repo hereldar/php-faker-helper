@@ -28,7 +28,6 @@ final class GeneratorTest extends TestCase
     ];
 
     private const NOT_IMPLEMENTED_METHODS = [
-        'unique',
         'optional',
         'valid',
         'passthrough',
@@ -98,13 +97,5 @@ final class GeneratorTest extends TestCase
 
             $generator->{$methodName}();
         }
-    }
-
-    public static function assertMethodExists(ReflectionClass $class, string $methodName): void
-    {
-        self::assertTrue(
-            $class->hasMethod($methodName),
-            "{$class->name} does not have a method called {$methodName}()."
-        );
     }
 }

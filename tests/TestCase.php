@@ -8,6 +8,7 @@ use Hereldar\FakerHelper\Config;
 use Hereldar\FakerHelper\ConfigBuilder;
 use Hereldar\FakerHelper\Enums\Locale;
 use PHPUnit\Framework\TestCase as PHPUnitTestCase;
+use ReflectionClass;
 
 abstract class TestCase extends PHPUnitTestCase
 {
@@ -24,5 +25,13 @@ abstract class TestCase extends PHPUnitTestCase
     protected function tearDown(): void
     {
         $this->configBuilder->defaultLocale(self::$defaultLocale);
+    }
+
+    public static function assertMethodExists(ReflectionClass $class, string $methodName): void
+    {
+        self::assertTrue(
+            $class->hasMethod($methodName),
+            "{$class->name} does not have a method called {$methodName}()."
+        );
     }
 }
