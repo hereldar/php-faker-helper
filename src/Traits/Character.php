@@ -10,6 +10,8 @@ trait Character
      * Returns a random letter from a to z.
      *
      * @return non-empty-string
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function letter(): string
     {
@@ -20,6 +22,8 @@ trait Character
      * Returns a random ASCII character (excluding accents and special chars).
      *
      * @return non-empty-string
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function ascii(): string
     {
@@ -32,6 +36,8 @@ trait Character
      * @see https://en.wikipedia.org/wiki/Emoji#Unicode_blocks
      *
      * @return non-empty-string
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function emoji(): string
     {
@@ -43,6 +49,8 @@ trait Character
      *
      * @deprecated
      * Returns a random letter from a to z
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function randomLetter(): string
     {
@@ -54,6 +62,8 @@ trait Character
      *
      * @deprecated
      * Returns a random ASCII character (excluding accents and special chars)
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function randomAscii(): string
     {

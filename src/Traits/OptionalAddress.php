@@ -10,6 +10,8 @@ trait OptionalAddress
      * @return ?non-empty-string
      *
      * @example 'town'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function citySuffix(): ?string
     {
@@ -20,6 +22,8 @@ trait OptionalAddress
      * @return ?non-empty-string
      *
      * @example 'Avenue'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function streetSuffix(): ?string
     {
@@ -30,6 +34,8 @@ trait OptionalAddress
      * @return ?non-empty-string
      *
      * @example '791'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function buildingNumber(): ?string
     {
@@ -40,6 +46,8 @@ trait OptionalAddress
      * @return ?non-empty-string
      *
      * @example 'Sashabury'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function city(): ?string
     {
@@ -50,6 +58,8 @@ trait OptionalAddress
      * @return ?non-empty-string
      *
      * @example 'Crist Parks'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function streetName(): ?string
     {
@@ -60,6 +70,8 @@ trait OptionalAddress
      * @return ?non-empty-string
      *
      * @example '791 Crist Parks'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function streetAddress(): ?string
     {
@@ -70,6 +82,8 @@ trait OptionalAddress
      * @return ?non-empty-string
      *
      * @example 86039-9874
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function postcode(): ?string
     {
@@ -80,6 +94,8 @@ trait OptionalAddress
      * @return ?non-empty-string
      *
      * @example '791 Crist Parks, Sashabury, IL 86039-9874'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function address(): ?string
     {
@@ -90,6 +106,8 @@ trait OptionalAddress
      * @return ?non-empty-string
      *
      * @example 'Japan'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function country(): ?string
     {
@@ -103,6 +121,8 @@ trait OptionalAddress
      * @param float|int $max
      *
      * @example '77.147489'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function latitude($min = -90, $max = 90): ?float
     {
@@ -113,6 +133,8 @@ trait OptionalAddress
      * Uses signed degrees format (returns a float number between -180 and 180).
      *
      * @example '86.211205'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function longitude(float|int $min = -180, float|int $max = 180): ?float
     {
@@ -122,7 +144,9 @@ trait OptionalAddress
     /**
      * @return ?float[]
      *
-     * @example array('77.147489', '86.211205')
+     * @example ['77.147489', '86.211205']
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function localCoordinates(): ?array
     {

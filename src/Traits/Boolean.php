@@ -12,6 +12,8 @@ trait Boolean
      * @param int<0, 100> $chanceOfGettingTrue Between 0 (always get false) and 100 (always get true)
      *
      * @example true
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function boolean(int $chanceOfGettingTrue = 50): bool
     {

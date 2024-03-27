@@ -10,6 +10,8 @@ trait Phone
      * @return non-empty-string
      *
      * @example '555-123-546'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function phoneNumber(): string
     {
@@ -20,6 +22,8 @@ trait Phone
      * @return non-empty-string
      *
      * @example '+11134567890'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function e164PhoneNumber(): string
     {
@@ -35,6 +39,9 @@ trait Phone
      * @example '720084494799532'
      *
      * @return non-empty-string $imei
+     *
+     * @psalm-suppress MixedInferredReturnType
+     * @psalm-suppress MoreSpecificReturnType
      */
     public function imei(): string
     {

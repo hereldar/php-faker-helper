@@ -14,6 +14,8 @@ trait Payment
      * @return non-empty-string
      *
      * @example 'MasterCard'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function creditCardType(): string
     {
@@ -30,6 +32,8 @@ trait Payment
      * @return non-empty-string
      *
      * @example '4485480221084675'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function creditCardNumber(?string $type = null, bool $formatted = false, string $separator = '-'): string
     {
@@ -40,6 +44,8 @@ trait Payment
      * @param bool $valid True (by default) to get a valid expiration date, false to get a maybe valid date
      *
      * @example 04/13
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function creditCardExpirationDate(bool $valid = true): DateTime
     {
@@ -52,6 +58,8 @@ trait Payment
      * @return non-empty-string
      *
      * @example '04/13'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function creditCardExpirationDateString(bool $valid = true, ?string $expirationDateFormat = null): string
     {
@@ -67,6 +75,8 @@ trait Payment
      *     name: string,
      *     expirationDate: string,
      * }
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function creditCardDetails(bool $valid = true): array
     {
@@ -83,6 +93,8 @@ trait Payment
      * @param int|null $length total length without country code and 2 check digits
      *
      * @return non-empty-string
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function iban(?string $countryCode = null, string $prefix = '', ?int $length = null): string
     {
@@ -97,6 +109,8 @@ trait Payment
      * @see    http://en.wikipedia.org/wiki/ISO_9362
      *
      * @example 'RZTIAT22263'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function swiftBicNumber(): string
     {

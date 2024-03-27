@@ -107,6 +107,7 @@ class Generator implements GeneratorConstructor
         /** @var FakerUniqueGenerator $fakerUniqueGenerator */
         $fakerUniqueGenerator = $this->fakerGenerator->unique($reset, $maxRetries);
 
+        /** @psalm-suppress UnsafeInstantiation */
         return $this->uniqueGenerator = new static($fakerUniqueGenerator);
     }
 
@@ -138,6 +139,7 @@ class Generator implements GeneratorConstructor
         /** @var FakerValidGenerator $fakerValidGenerator */
         $fakerValidGenerator = $this->fakerGenerator->valid($validator, $maxRetries);
 
+        /** @psalm-suppress UnsafeInstantiation */
         return new static($fakerValidGenerator);
     }
 }

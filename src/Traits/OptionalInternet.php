@@ -10,6 +10,8 @@ trait OptionalInternet
      * @return ?non-empty-string
      *
      * @example 'jdoe@acme.biz'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function email(): ?string
     {
@@ -20,8 +22,10 @@ trait OptionalInternet
      * @return ?non-empty-string
      *
      * @example 'jdoe@example.com'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
-    final public function safeEmail(): ?string
+    public function safeEmail(): ?string
     {
         return $this->fakerGenerator->safeEmail();
     }
@@ -30,6 +34,8 @@ trait OptionalInternet
      * @return ?non-empty-string
      *
      * @example 'jdoe@gmail.com'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function freeEmail(): ?string
     {
@@ -40,6 +46,8 @@ trait OptionalInternet
      * @return ?non-empty-string
      *
      * @example 'jdoe@dawson.com'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function companyEmail(): ?string
     {
@@ -50,6 +58,8 @@ trait OptionalInternet
      * @return ?non-empty-string
      *
      * @example 'gmail.com'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function freeEmailDomain(): ?string
     {
@@ -60,8 +70,10 @@ trait OptionalInternet
      * @return ?non-empty-string
      *
      * @example 'example.org'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
-    final public function safeEmailDomain(): ?string
+    public function safeEmailDomain(): ?string
     {
         return $this->fakerGenerator->safeEmailDomain();
     }
@@ -70,6 +82,8 @@ trait OptionalInternet
      * @return ?non-empty-string
      *
      * @example 'jdoe'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function userName(): ?string
     {
@@ -83,6 +97,8 @@ trait OptionalInternet
      * @return ?non-empty-string
      *
      * @example 'fY4èHdZv68'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function password(int $minLength = 6, int $maxLength = 20): ?string
     {
@@ -93,6 +109,8 @@ trait OptionalInternet
      * @return ?non-empty-string
      *
      * @example 'tiramisu.com'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function domainName(): ?string
     {
@@ -103,6 +121,8 @@ trait OptionalInternet
      * @return ?non-empty-string
      *
      * @example 'faber'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function domainWord(): ?string
     {
@@ -113,6 +133,8 @@ trait OptionalInternet
      * @return ?non-empty-string
      *
      * @example 'com'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function tld(): ?string
     {
@@ -123,6 +145,8 @@ trait OptionalInternet
      * @return ?non-empty-string
      *
      * @example 'http://www.runolfsdottir.com/'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function url(): ?string
     {
@@ -133,6 +157,8 @@ trait OptionalInternet
      * @return ?non-empty-string
      *
      * @example 'aut-repellat-commodi-vel-itaque-nihil-id-saepe-nostrum'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function slug(int $nbWords = 6, bool $variableNbWords = true): ?string
     {
@@ -143,6 +169,8 @@ trait OptionalInternet
      * @return ?non-empty-string
      *
      * @example '237.149.115.38'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function ipv4(): ?string
     {
@@ -153,6 +181,8 @@ trait OptionalInternet
      * @return ?non-empty-string
      *
      * @example '35cd:186d:3e23:2986:ef9f:5b41:42a4:e6f1'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function ipv6(): ?string
     {
@@ -163,6 +193,8 @@ trait OptionalInternet
      * @return ?non-empty-string
      *
      * @example '10.1.1.17'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function localIpv4(): ?string
     {
@@ -173,6 +205,8 @@ trait OptionalInternet
      * @return ?non-empty-string
      *
      * @example '32:F1:39:2F:D6:18'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function macAddress(): ?string
     {

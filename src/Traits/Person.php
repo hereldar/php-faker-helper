@@ -12,6 +12,8 @@ trait Person
      * @return non-empty-string
      *
      * @example 'John Doe'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function name(?string $gender = null): string
     {
@@ -24,6 +26,8 @@ trait Person
      * @return non-empty-string
      *
      * @example 'John'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function firstName(?string $gender = null): string
     {
@@ -32,6 +36,8 @@ trait Person
 
     /**
      * @return non-empty-string
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function firstNameMale(): string
     {
@@ -40,6 +46,8 @@ trait Person
 
     /**
      * @return non-empty-string
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function firstNameFemale(): string
     {
@@ -50,6 +58,8 @@ trait Person
      * @return non-empty-string
      *
      * @example 'Doe'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function lastName(): string
     {
@@ -62,6 +72,8 @@ trait Person
      * @return non-empty-string
      *
      * @example 'Mrs.'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function title(?string $gender = null): string
     {
@@ -72,6 +84,8 @@ trait Person
      * @return non-empty-string
      *
      * @example 'Mr.'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function titleMale(): string
     {
@@ -82,6 +96,8 @@ trait Person
      * @return non-empty-string
      *
      * @example 'Mrs.'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function titleFemale(): string
     {

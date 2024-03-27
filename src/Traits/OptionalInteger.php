@@ -14,6 +14,8 @@ trait OptionalInteger
      * @param bool $strict Whether the returned number should have exactly $nbDigits
      *
      * @example 79907610
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function integer(?int $nbDigits = null, bool $strict = false): ?int
     {
@@ -27,6 +29,8 @@ trait OptionalInteger
      * @param int $int2 defaults to 32 bit max integer, ie 2147483647
      *
      * @example 79907610
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function integerBetween(int $int1 = 0, int $int2 = 2147483647): ?int
     {
@@ -43,6 +47,8 @@ trait OptionalInteger
      * @deprecated
      *
      * @example 79907610
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function randomNumber(?int $nbDigits = null, bool $strict = false): ?int
     {
@@ -58,6 +64,8 @@ trait OptionalInteger
      * @deprecated
      *
      * @example 79907610
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function numberBetween(int $int1 = 0, int $int2 = 2147483647): ?int
     {

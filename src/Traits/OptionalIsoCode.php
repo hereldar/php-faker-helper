@@ -10,6 +10,8 @@ trait OptionalIsoCode
      * @return ?non-empty-string
      *
      * @example 'fr_FR'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function locale(): ?string
     {
@@ -22,6 +24,8 @@ trait OptionalIsoCode
      * @see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
      *
      * @example 'FR'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function countryCode(): ?string
     {
@@ -34,6 +38,8 @@ trait OptionalIsoCode
      * @see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3
      *
      * @example 'FRA'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function countryISOAlpha3(): ?string
     {
@@ -44,6 +50,8 @@ trait OptionalIsoCode
      * @return ?non-empty-string
      *
      * @example 'fr'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function languageCode(): ?string
     {
@@ -56,6 +64,8 @@ trait OptionalIsoCode
      * @see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
      *
      * @example 'EUR'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function currencyCode(): ?string
     {

@@ -21,6 +21,8 @@ trait OptionalTime
      * @return ?int<0, max>
      *
      * @example 1061306726
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function unixTime(DateTimeInterface|int|string $max = 'now'): ?int
     {
@@ -38,6 +40,8 @@ trait OptionalTime
      * @see http://php.net/manual/en/function.date-default-timezone-get.php
      *
      * @example DateTime('2005-08-16 20:39:21')
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function dateTime(DateTimeInterface|int|string $max = 'now', DateTimeZone|string|null $timezone = null): ?DateTime
     {
@@ -54,6 +58,8 @@ trait OptionalTime
      * @see http://php.net/manual/en/function.date-default-timezone-get.php
      *
      * @example DateTime('1265-03-22 21:15:52')
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function dateTimeAD(DateTimeInterface|int|string $max = 'now', DateTimeZone|string|null $timezone = null): ?DateTime
     {
@@ -68,6 +74,8 @@ trait OptionalTime
      * @return ?non-empty-string
      *
      * @example '2003-10-21T16:05:52+0000'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function iso8601(DateTimeInterface|int|string $max = 'now'): ?string
     {
@@ -82,6 +90,8 @@ trait OptionalTime
      * @return ?non-empty-string
      *
      * @example '2008-11-27'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function date(string $format = 'Y-m-d', DateTimeInterface|int|string $max = 'now'): ?string
     {
@@ -96,6 +106,8 @@ trait OptionalTime
      * @return ?non-empty-string
      *
      * @example '15:02:34'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function time(string $format = 'H:i:s', DateTimeInterface|int|string $max = 'now'): ?string
     {
@@ -114,6 +126,8 @@ trait OptionalTime
      * @see http://php.net/manual/en/function.date-default-timezone-get.php
      *
      * @example DateTime('1999-02-02 11:42:52')
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function dateTimeBetween(DateTimeInterface|int|string $startDate = '-30 years', DateTimeInterface|int|string $endDate = 'now', DateTimeZone|string|null $timezone = null): ?DateTime
     {
@@ -133,6 +147,8 @@ trait OptionalTime
      *
      * @see http://php.net/manual/en/timezones.php
      * @see http://php.net/manual/en/function.date-default-timezone-get.php
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function dateTimeInInterval(DateTimeInterface|int|string $date = '-30 years', DateInterval|string $interval = '+5 days', DateTimeZone|string|null $timezone = null): ?DateTime
     {
@@ -144,6 +160,8 @@ trait OptionalTime
      *
      * @param DateTimeInterface|int|string $max maximum timestamp used as random end limit, default to "now"
      * @param DateTimeZone|string|null $timezone time zone in which the date time should be set, default to DateTime::$defaultTimezone, if set, otherwise the result of `date_default_timezone_get`
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function dateTimeThisCentury(DateTimeInterface|int|string $max = 'now', DateTimeZone|string|null $timezone = null): ?DateTime
     {
@@ -155,6 +173,8 @@ trait OptionalTime
      *
      * @param DateTimeInterface|int|string $max maximum timestamp used as random end limit, default to "now"
      * @param DateTimeZone|string|null $timezone time zone in which the date time should be set, default to DateTime::$defaultTimezone, if set, otherwise the result of `date_default_timezone_get`
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function dateTimeThisDecade(DateTimeInterface|int|string $max = 'now', DateTimeZone|string|null $timezone = null): ?DateTime
     {
@@ -166,6 +186,8 @@ trait OptionalTime
      *
      * @param DateTimeInterface|int|string $max maximum timestamp used as random end limit, default to "now"
      * @param DateTimeZone|string|null $timezone time zone in which the date time should be set, default to DateTime::$defaultTimezone, if set, otherwise the result of `date_default_timezone_get`
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function dateTimeThisYear(DateTimeInterface|int|string $max = 'now', DateTimeZone|string|null $timezone = null): ?DateTime
     {
@@ -177,6 +199,8 @@ trait OptionalTime
      *
      * @param DateTimeInterface|int|string $max maximum timestamp used as random end limit, default to "now"
      * @param DateTimeZone|string|null $timezone time zone in which the date time should be set, default to DateTime::$defaultTimezone, if set, otherwise the result of `date_default_timezone_get`
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function dateTimeThisMonth(DateTimeInterface|int|string $max = 'now', DateTimeZone|string|null $timezone = null): ?DateTime
     {
@@ -191,6 +215,8 @@ trait OptionalTime
      * @return ?non-empty-string
      *
      * @example 'am'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function amPm(DateTimeInterface|int|string $max = 'now'): ?string
     {
@@ -203,6 +229,8 @@ trait OptionalTime
      * @return ?non-empty-string
      *
      * @example '22'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function dayOfMonth(DateTimeInterface|int|string $max = 'now'): ?string
     {
@@ -215,6 +243,8 @@ trait OptionalTime
      * @return ?non-empty-string
      *
      * @example 'Tuesday'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function dayOfWeek(DateTimeInterface|int|string $max = 'now'): ?string
     {
@@ -227,6 +257,8 @@ trait OptionalTime
      * @return ?non-empty-string
      *
      * @example '7'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function month(DateTimeInterface|int|string $max = 'now'): ?string
     {
@@ -239,6 +271,8 @@ trait OptionalTime
      * @return ?non-empty-string
      *
      * @example 'September'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function monthName(DateTimeInterface|int|string $max = 'now'): ?string
     {
@@ -251,6 +285,8 @@ trait OptionalTime
      * @return ?non-empty-string
      *
      * @example '1987'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function year(DateTimeInterface|int|string $max = 'now'): ?string
     {
@@ -261,6 +297,8 @@ trait OptionalTime
      * @return ?non-empty-string
      *
      * @example 'XVII'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function century(): ?string
     {
@@ -271,6 +309,8 @@ trait OptionalTime
      * @return ?non-empty-string
      *
      * @example 'Europe/Paris'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function timezone(?string $countryCode = null): ?string
     {

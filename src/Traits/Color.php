@@ -10,6 +10,8 @@ trait Color
      * @return non-empty-string
      *
      * @example '#fa3cc2'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function hexColor(): string
     {
@@ -20,6 +22,8 @@ trait Color
      * @return non-empty-string
      *
      * @example '#ff0044'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function safeHexColor(): string
     {
@@ -30,6 +34,8 @@ trait Color
      * @return array{int<0, 255>, int<0, 255>, int<0, 255>}
      *
      * @example 'array(0,255,122)'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function rgbColorAsArray(): array
     {
@@ -40,6 +46,8 @@ trait Color
      * @return non-empty-string
      *
      * @example '0,255,122'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function rgbColor(): string
     {
@@ -50,6 +58,8 @@ trait Color
      * @return non-empty-string
      *
      * @example 'rgb(0,255,122)'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function rgbCssColor(): string
     {
@@ -60,6 +70,8 @@ trait Color
      * @return non-empty-string
      *
      * @example 'rgba(0,255,122,0.8)'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function rgbaCssColor(): string
     {
@@ -70,6 +82,8 @@ trait Color
      * @return non-empty-string
      *
      * @example 'blue'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function safeColorName(): string
     {
@@ -80,6 +94,8 @@ trait Color
      * @return non-empty-string
      *
      * @example 'NavajoWhite'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function colorName(): string
     {
@@ -90,6 +106,8 @@ trait Color
      * @return non-empty-string
      *
      * @example '340,50,20'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function hslColor(): string
     {
@@ -99,7 +117,9 @@ trait Color
     /**
      * @return array{int<0, 360>, int<0, 100>, int<0, 100>}
      *
-     * @example array(340, 50, 20)
+     * @example [340, 50, 20]
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function hslColorAsArray(): array
     {

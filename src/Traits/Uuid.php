@@ -12,6 +12,8 @@ trait Uuid
      * @return non-empty-string
      *
      * @example '7e57d004-2b97-0e7a-b45f-5387367791cd'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function uuid(): string
     {

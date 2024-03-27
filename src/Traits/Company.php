@@ -10,6 +10,8 @@ trait Company
      * @return non-empty-string
      *
      * @example 'Acme Ltd'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function company(): string
     {
@@ -20,6 +22,8 @@ trait Company
      * @return non-empty-string
      *
      * @example 'Ltd'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function companySuffix(): string
     {
@@ -30,6 +34,8 @@ trait Company
      * @return non-empty-string
      *
      * @example 'Job'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function jobTitle(): string
     {

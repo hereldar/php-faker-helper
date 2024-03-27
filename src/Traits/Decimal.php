@@ -12,6 +12,8 @@ trait Decimal
      * @param ?int<0, max> $nbMaxDecimals
      *
      * @example 48.8932
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function float(?int $nbMaxDecimals = null, float|int $min = 0, float|int|null $max = null): float
     {
@@ -26,6 +28,8 @@ trait Decimal
      * @deprecated
      *
      * @example 48.8932
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function randomFloat(?int $nbMaxDecimals = null, float|int $min = 0, float|int|null $max = null): float
     {

@@ -15,6 +15,8 @@ trait OptionalVersion
      * @example 1.0.0
      * @example 1.0.0-alpha.1
      * @example 1.0.0-alpha.1+b71f04d
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function semver(bool $preRelease = false, bool $build = false): ?string
     {

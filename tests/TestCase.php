@@ -15,6 +15,9 @@ abstract class TestCase extends PHPUnitTestCase
     private static Locale $defaultLocale;
     protected ConfigBuilder $configBuilder;
 
+    /**
+     * @psalm-suppress RedundantPropertyInitializationCheck
+     */
     protected function setUp(): void
     {
         self::$defaultLocale ??= Config::defaultLocale();

@@ -10,6 +10,8 @@ trait OptionalText
      * @return ?non-empty-string
      *
      * @example 'Lorem'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function word(): ?string
     {
@@ -23,10 +25,11 @@ trait OptionalText
      * @param bool $asText if true the sentences are returned as one string
      *
      * @return list<non-empty-string>|string|null
+     * @psalm-return ($asText is true ? string|null : list<non-empty-string>|null)
      *
-     * @psalm-return ($asText ? string|null : list<non-empty-string>|null)
+     * @example ['Lorem', 'ipsum', 'dolor']
      *
-     * @example array('Lorem', 'ipsum', 'dolor')
+     * @psalm-suppress MixedInferredReturnType
      */
     public function words(int $nb = 3, bool $asText = false): array|string|null
     {
@@ -43,6 +46,8 @@ trait OptionalText
      * @return ?non-empty-string
      *
      * @example 'Lorem ipsum dolor sit amet.'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function sentence(int $nbWords = 6, bool $variableNbWords = true): ?string
     {
@@ -56,10 +61,11 @@ trait OptionalText
      * @param bool $asText if true the sentences are returned as one string
      *
      * @return list<non-empty-string>|string|null
+     * @psalm-return ($asText is true ? string|null : list<non-empty-string>|null)
      *
-     * @psalm-return ($asText ? string|null : list<non-empty-string>|null)
+     * @example ['Lorem ipsum dolor sit amet.', 'Consectetur adipisicing eli.']
      *
-     * @example array('Lorem ipsum dolor sit amet.', 'Consectetur adipisicing eli.')
+     * @psalm-suppress MixedInferredReturnType
      */
     public function sentences(int $nb = 3, bool $asText = false): array|string|null
     {
@@ -76,6 +82,8 @@ trait OptionalText
      * @return ?non-empty-string
      *
      * @example 'Sapiente sunt omnis. Ut pariatur ad autem ducimus et. Voluptas rem voluptas sint modi dolorem amet.'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function paragraph(int $nbSentences = 3, bool $variableNbSentences = true): ?string
     {
@@ -89,10 +97,11 @@ trait OptionalText
      * @param bool $asText if true the paragraphs are returned as one string, separated by two newlines
      *
      * @return list<non-empty-string>|string|null
+     * @psalm-return ($asText is true ? string|null : list<non-empty-string>|null)
      *
-     * @psalm-return ($asText ? string|null : list<non-empty-string>|null)
+     * @example [$paragraph1, $paragraph2, $paragraph3]
      *
-     * @example array($paragraph1, $paragraph2, $paragraph3)
+     * @psalm-suppress MixedInferredReturnType
      */
     public function paragraphs(int $nb = 3, bool $asText = false): array|string|null
     {
@@ -108,6 +117,8 @@ trait OptionalText
      * @return ?non-empty-string
      *
      * @example 'Sapiente sunt omnis. Ut pariatur ad autem ducimus et. Voluptas rem voluptas sint modi dolorem amet.'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function text(int $maxNbChars = 200): ?string
     {
@@ -129,6 +140,8 @@ trait OptionalText
      * @return ?non-empty-string
      *
      * @example 'Alice, swallowing down her flamingo, and began by taking the little golden key'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function realText(int $maxNbChars = 200, int $indexSize = 2): ?string
     {
@@ -151,6 +164,8 @@ trait OptionalText
      * @return ?non-empty-string
      *
      * @example 'Alice, swallowing down her flamingo, and began by taking the little golden key'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function realTextBetween(int $minNbChars = 160, int $maxNbChars = 200, int $indexSize = 2): ?string
     {

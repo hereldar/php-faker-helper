@@ -10,6 +10,8 @@ trait Blood
      * Get an actual blood type.
      *
      * @example 'AB'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function bloodType(): string
     {
@@ -20,6 +22,8 @@ trait Blood
      * Get a random resis value.
      *
      * @example '+'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function bloodRh(): string
     {
@@ -30,6 +34,8 @@ trait Blood
      * Get a full blood group.
      *
      * @example 'AB+'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function bloodGroup(): string
     {

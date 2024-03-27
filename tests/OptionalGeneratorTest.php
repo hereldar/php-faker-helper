@@ -35,8 +35,11 @@ final class OptionalGeneratorTest extends TestCase
             self::assertMethodExists($optionalGeneratorReflection, $methodName);
 
             if (0 === $method->getNumberOfRequiredParameters()) {
+                /** @psalm-suppress MixedAssignment */
                 $result1 = $optionalGenerator1->{$methodName}();
+                /** @psalm-suppress MixedAssignment */
                 $result2 = $optionalGenerator2->{$methodName}();
+
                 self::assertNull($result1);
                 self::assertNotNull($result2);
             }

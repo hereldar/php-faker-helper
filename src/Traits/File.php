@@ -10,6 +10,8 @@ trait File
      * Get a random MIME type.
      *
      * @example 'video/avi'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function mimeType(): string
     {
@@ -20,6 +22,8 @@ trait File
      * Get a random file extension (without a dot).
      *
      * @example 'avi'
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function fileExtension(): string
     {
@@ -28,6 +32,8 @@ trait File
 
     /**
      * Get a full path to a new real file on the system.
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function filePath(): string
     {

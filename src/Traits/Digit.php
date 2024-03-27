@@ -10,6 +10,8 @@ trait Digit
      * Returns a random number between 0 and 9.
      *
      * @param ?int<0, 9> $except
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function digit(?int $except = null): int
     {
@@ -20,6 +22,8 @@ trait Digit
 
     /**
      * Returns a random number between 1 and 9.
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function positiveDigit(): int
     {
@@ -30,6 +34,8 @@ trait Digit
      * Returns a random number between 0 and 9.
      *
      * @deprecated
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function randomDigit(): int
     {
@@ -40,6 +46,8 @@ trait Digit
      * Returns a random number between 1 and 9.
      *
      * @deprecated
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function randomDigitNotNull(): int
     {
@@ -50,6 +58,8 @@ trait Digit
      * Returns a random number between 1 and 9.
      *
      * @deprecated
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function randomDigitNotZero(): int
     {
@@ -62,6 +72,8 @@ trait Digit
      * @param int<0, 9> $except
      *
      * @deprecated
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function randomDigitNot(int $except): int
     {
