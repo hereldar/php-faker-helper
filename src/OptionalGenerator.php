@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Hereldar\FakerHelper;
 
 use Faker\ChanceGenerator as OptionalFakerGenerator;
+use Hereldar\FakerHelper\Interfaces\OptionalGeneratorConstructor;
 use Hereldar\FakerHelper\Traits\OptionalAddress;
 use Hereldar\FakerHelper\Traits\OptionalBarcode;
 use Hereldar\FakerHelper\Traits\OptionalBlood;
@@ -29,7 +30,7 @@ use Hereldar\FakerHelper\Traits\OptionalUserAgent;
 use Hereldar\FakerHelper\Traits\OptionalUuid;
 use Hereldar\FakerHelper\Traits\OptionalVersion;
 
-class OptionalGenerator
+class OptionalGenerator implements OptionalGeneratorConstructor
 {
     use OptionalAddress;
     use OptionalBarcode;

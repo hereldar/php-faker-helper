@@ -9,6 +9,7 @@ use DateTime;
 use DateTimeImmutable;
 use DateTimeInterface;
 use DateTimeZone;
+use InvalidArgumentException;
 
 trait OptionalTime
 {
@@ -23,6 +24,7 @@ trait OptionalTime
      */
     public function unixTime(DateTimeInterface|int|string $max = 'now'): ?int
     {
+        /** @var ?int<0, max> */
         return $this->fakerGenerator->unixTime($this->sanitizeTimestamp($max));
     }
 
@@ -275,7 +277,7 @@ trait OptionalTime
         return $this->fakerGenerator->timezone($countryCode);
     }
 
-    private function sanitizeTimestamp(DateTimeInterface|int|string $timestamp): ?int
+    private function sanitizeTimestamp(DateTimeInterface|int|string $timestamp): int
     {
         if (\is_int($timestamp)) {
             return $timestamp;
@@ -289,7 +291,13 @@ trait OptionalTime
             return $timestamp->getTimestamp();
         }
 
-        return \strtotime($timestamp ?: 'now');
+        $timestamp = \strtotime($timestamp ?: 'now');
+
+        if (false === $timestamp) {
+            throw new InvalidArgumentException('Invalid timestamp provided');
+        }
+
+        return $timestamp;
     }
 
     private function sanitizeTimeZone(DateTimeZone|string|null $timezone): ?string
@@ -301,7 +309,7 @@ trait OptionalTime
         return $timezone ?: null;
     }
 
-    private function sanitizeDateInterval(DateInterval|string $interval): ?string
+    private function sanitizeDateInterval(DateInterval|string $interval): string
     {
         if (\is_string($interval)) {
             return $interval;
@@ -341,7 +349,7 @@ trait OptionalTime
         return \implode(' + ', $tokens) ?: '0 seconds';
     }
 
-    private function sanitizeDateTime(DateTimeInterface|int|string $timestamp): ?DateTime
+    private function sanitizeDateTime(DateTimeInterface|int|string $timestamp): DateTime
     {
         if ($timestamp instanceof DateTime) {
             return $timestamp;
@@ -352,6 +360,7 @@ trait OptionalTime
         }
 
         if (\is_int($timestamp) || \is_numeric($timestamp)) {
+            /** @var DateTime */
             return DateTime::createFromFormat('U', (string) $timestamp);
         }
 

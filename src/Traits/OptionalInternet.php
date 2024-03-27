@@ -77,11 +77,14 @@ trait OptionalInternet
     }
 
     /**
+     * @param int<1, max> $minLength
+     * @param int<1, max> $maxLength
+     *
      * @return ?non-empty-string
      *
      * @example 'fY4èHdZv68'
      */
-    public function password($minLength = 6, $maxLength = 20): ?string
+    public function password(int $minLength = 6, int $maxLength = 20): ?string
     {
         return $this->fakerGenerator->password($minLength, $maxLength);
     }
@@ -131,7 +134,7 @@ trait OptionalInternet
      *
      * @example 'aut-repellat-commodi-vel-itaque-nihil-id-saepe-nostrum'
      */
-    public function slug($nbWords = 6, $variableNbWords = true): ?string
+    public function slug(int $nbWords = 6, bool $variableNbWords = true): ?string
     {
         return $this->fakerGenerator->slug($nbWords, $variableNbWords);
     }

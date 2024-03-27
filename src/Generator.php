@@ -5,9 +5,11 @@ declare(strict_types=1);
 namespace Hereldar\FakerHelper;
 
 use Closure;
+use Faker\ChanceGenerator as FakerOptionalGenerator;
 use Faker\Generator as FakerGenerator;
 use Faker\UniqueGenerator as FakerUniqueGenerator;
 use Faker\ValidGenerator as FakerValidGenerator;
+use Hereldar\FakerHelper\Interfaces\GeneratorConstructor;
 use Hereldar\FakerHelper\Traits\Address;
 use Hereldar\FakerHelper\Traits\Barcode;
 use Hereldar\FakerHelper\Traits\Blood;
@@ -33,7 +35,7 @@ use Hereldar\FakerHelper\Traits\Uuid;
 use Hereldar\FakerHelper\Traits\Version;
 use OverflowException;
 
-class Generator
+class Generator implements GeneratorConstructor
 {
     use Address;
     use Barcode;
@@ -59,7 +61,8 @@ class Generator
     use Uuid;
     use Version;
 
-    private ?self $uniqueGenerator = null;
+    /** @var ?static */
+    protected ?self $uniqueGenerator = null;
 
     public function __construct(
         private FakerGenerator|FakerUniqueGenerator|FakerValidGenerator $fakerGenerator,
@@ -72,6 +75,7 @@ class Generator
      */
     public function optional(float $weight = 0.5, mixed $default = null): OptionalGenerator
     {
+        /** @var FakerOptionalGenerator $fakerOptionalGenerator */
         $fakerOptionalGenerator = $this->fakerGenerator->optional($weight, $default);
 
         return new OptionalGenerator($fakerOptionalGenerator);
@@ -100,6 +104,7 @@ class Generator
             return $this->uniqueGenerator;
         }
 
+        /** @var FakerUniqueGenerator $fakerUniqueGenerator */
         $fakerUniqueGenerator = $this->fakerGenerator->unique($reset, $maxRetries);
 
         return $this->uniqueGenerator = new static($fakerUniqueGenerator);
@@ -124,12 +129,13 @@ class Generator
      * @param int $maxRetries maximum number of retries to find a valid value,
      *                        After which an OverflowException is thrown
      *
-     * @return self A proxy class returning only valid values
+     * @return static A proxy class returning only valid values
      *
      * @throws OverflowException When no valid value can be found by iterating $maxRetries times
      */
     public function valid(?Closure $validator = null, int $maxRetries = 10000): static
     {
+        /** @var FakerValidGenerator $fakerValidGenerator */
         $fakerValidGenerator = $this->fakerGenerator->valid($validator, $maxRetries);
 
         return new static($fakerValidGenerator);

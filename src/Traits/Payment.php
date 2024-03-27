@@ -60,6 +60,13 @@ trait Payment
 
     /**
      * @param bool $valid True (by default) to get a valid expiration date, false to get a maybe valid date
+     *
+     * @return array{
+     *     type: string,
+     *     number: string,
+     *     name: string,
+     *     expirationDate: string,
+     * }
      */
     public function creditCardDetails(bool $valid = true): array
     {

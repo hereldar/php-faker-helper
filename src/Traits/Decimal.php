@@ -9,6 +9,8 @@ trait Decimal
     /**
      * Return a random float number.
      *
+     * @param ?int<0, max> $nbMaxDecimals
+     *
      * @example 48.8932
      */
     public function float(?int $nbMaxDecimals = null, float|int $min = 0, float|int|null $max = null): float
@@ -18,6 +20,8 @@ trait Decimal
 
     /**
      * Return a random float number.
+     *
+     * @param ?int<0, max> $nbMaxDecimals
      *
      * @deprecated
      *

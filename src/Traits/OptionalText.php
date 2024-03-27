@@ -19,8 +19,12 @@ trait OptionalText
     /**
      * Generate an array of random words.
      *
-     * @param int $nb how many words to return
+     * @param int<0, max> $nb how many words to return
      * @param bool $asText if true the sentences are returned as one string
+     *
+     * @return list<non-empty-string>|string|null
+     *
+     * @psalm-return ($asText ? string|null : list<non-empty-string>|null)
      *
      * @example array('Lorem', 'ipsum', 'dolor')
      */
@@ -48,8 +52,12 @@ trait OptionalText
     /**
      * Generate an array of sentences.
      *
-     * @param int $nb how many sentences to return
+     * @param int<0, max> $nb how many sentences to return
      * @param bool $asText if true the sentences are returned as one string
+     *
+     * @return list<non-empty-string>|string|null
+     *
+     * @psalm-return ($asText ? string|null : list<non-empty-string>|null)
      *
      * @example array('Lorem ipsum dolor sit amet.', 'Consectetur adipisicing eli.')
      */
@@ -77,8 +85,12 @@ trait OptionalText
     /**
      * Generate an array of paragraphs.
      *
-     * @param int $nb how many paragraphs to return
+     * @param int<0, max> $nb how many paragraphs to return
      * @param bool $asText if true the paragraphs are returned as one string, separated by two newlines
+     *
+     * @return list<non-empty-string>|string|null
+     *
+     * @psalm-return ($asText ? string|null : list<non-empty-string>|null)
      *
      * @example array($paragraph1, $paragraph2, $paragraph3)
      */

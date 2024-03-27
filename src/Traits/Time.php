@@ -9,6 +9,7 @@ use DateTime;
 use DateTimeImmutable;
 use DateTimeInterface;
 use DateTimeZone;
+use InvalidArgumentException;
 
 trait Time
 {
@@ -23,6 +24,7 @@ trait Time
      */
     public function unixTime(DateTimeInterface|int|string $max = 'now'): int
     {
+        /** @var int<0, max> */
         return $this->fakerGenerator->unixTime($this->sanitizeTimestamp($max));
     }
 
@@ -289,7 +291,13 @@ trait Time
             return $timestamp->getTimestamp();
         }
 
-        return \strtotime($timestamp ?: 'now');
+        $timestamp = \strtotime($timestamp ?: 'now');
+
+        if (false === $timestamp) {
+            throw new InvalidArgumentException('Invalid timestamp provided');
+        }
+
+        return $timestamp;
     }
 
     private function sanitizeTimeZone(DateTimeZone|string|null $timezone): ?string
@@ -352,6 +360,7 @@ trait Time
         }
 
         if (\is_int($timestamp) || \is_numeric($timestamp)) {
+            /** @var DateTime */
             return DateTime::createFromFormat('U', (string) $timestamp);
         }
 
