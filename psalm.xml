@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <psalm
     errorLevel="1"
-    phpVersion="8.1"
     findUnusedBaselineEntry="false"
     findUnusedCode="false"
     findUnusedVariablesAndParams="true"

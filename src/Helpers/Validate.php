@@ -9,8 +9,6 @@ use InvalidArgumentException;
 final class Validate
 {
     /**
-     * @psalm-pure
-     *
      * @throws InvalidArgumentException
      */
     public static function locale(string $value): void
