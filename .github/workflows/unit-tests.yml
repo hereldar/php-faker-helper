@@ -8,7 +8,7 @@ on:
 
 jobs:
   phpunit:
-    name: PHPUnit - PHP ${{ matrix.php }} (${{ matrix.dependencies }}) Ubuntu
+    name: PHPUnit - PHP ${{ matrix.php }} Ubuntu
 
     strategy:
       fail-fast: false
