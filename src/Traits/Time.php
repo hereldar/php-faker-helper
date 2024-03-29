@@ -6,10 +6,9 @@ namespace Hereldar\FakerHelper\Traits;
 
 use DateInterval;
 use DateTime;
-use DateTimeImmutable;
 use DateTimeInterface;
 use DateTimeZone;
-use InvalidArgumentException;
+use Hereldar\FakerHelper\Helpers\Sanitize;
 
 trait Time
 {
@@ -27,7 +26,7 @@ trait Time
     public function unixTime(DateTimeInterface|int|string $max = 'now'): int
     {
         /** @var int<0, max> */
-        return $this->fakerGenerator->unixTime($this->sanitizeTimestamp($max));
+        return $this->fakerGenerator->unixTime(Sanitize::timestamp($max));
     }
 
     /**
@@ -45,7 +44,7 @@ trait Time
      */
     public function dateTime(DateTimeInterface|int|string $max = 'now', DateTimeZone|string|null $timezone = null): DateTime
     {
-        return $this->fakerGenerator->dateTime($this->sanitizeTimestamp($max), $this->sanitizeTimeZone($timezone));
+        return $this->fakerGenerator->dateTime(Sanitize::timestamp($max), Sanitize::timeZoneName($timezone));
     }
 
     /**
@@ -63,7 +62,7 @@ trait Time
      */
     public function dateTimeAD(DateTimeInterface|int|string $max = 'now', DateTimeZone|string|null $timezone = null): DateTime
     {
-        return $this->fakerGenerator->dateTimeAD($this->sanitizeTimestamp($max), $this->sanitizeTimeZone($timezone));
+        return $this->fakerGenerator->dateTimeAD(Sanitize::timestamp($max), Sanitize::timeZoneName($timezone));
     }
 
     /**
@@ -79,7 +78,7 @@ trait Time
      */
     public function iso8601(DateTimeInterface|int|string $max = 'now'): string
     {
-        return $this->fakerGenerator->iso8601($this->sanitizeTimestamp($max));
+        return $this->fakerGenerator->iso8601(Sanitize::timestamp($max));
     }
 
     /**
@@ -95,7 +94,7 @@ trait Time
      */
     public function date(string $format = 'Y-m-d', DateTimeInterface|int|string $max = 'now'): string
     {
-        return $this->fakerGenerator->date($format, $this->sanitizeTimestamp($max));
+        return $this->fakerGenerator->date($format, Sanitize::timestamp($max));
     }
 
     /**
@@ -111,7 +110,7 @@ trait Time
      */
     public function time(string $format = 'H:i:s', DateTimeInterface|int|string $max = 'now'): string
     {
-        return $this->fakerGenerator->time($format, $this->sanitizeTimestamp($max));
+        return $this->fakerGenerator->time($format, Sanitize::timestamp($max));
     }
 
     /**
@@ -131,7 +130,7 @@ trait Time
      */
     public function dateTimeBetween(DateTimeInterface|int|string $startDate = '-30 years', DateTimeInterface|int|string $endDate = 'now', DateTimeZone|string|null $timezone = null): DateTime
     {
-        return $this->fakerGenerator->dateTimeBetween($this->sanitizeDateTime($startDate), $this->sanitizeTimestamp($endDate), $this->sanitizeTimeZone($timezone));
+        return $this->fakerGenerator->dateTimeBetween(Sanitize::dateTime($startDate), Sanitize::timestamp($endDate), Sanitize::timeZoneName($timezone));
     }
 
     /**
@@ -152,7 +151,7 @@ trait Time
      */
     public function dateTimeInInterval(DateTimeInterface|int|string $date = '-30 years', DateInterval|string $interval = '+5 days', DateTimeZone|string|null $timezone = null): DateTime
     {
-        return $this->fakerGenerator->dateTimeInInterval($this->sanitizeDateTime($date), $this->sanitizeDateInterval($interval), $this->sanitizeTimeZone($timezone));
+        return $this->fakerGenerator->dateTimeInInterval(Sanitize::dateTime($date), Sanitize::dateIntervalString($interval), Sanitize::timeZoneName($timezone));
     }
 
     /**
@@ -165,7 +164,7 @@ trait Time
      */
     public function dateTimeThisCentury(DateTimeInterface|int|string $max = 'now', DateTimeZone|string|null $timezone = null): DateTime
     {
-        return $this->fakerGenerator->dateTimeThisCentury($this->sanitizeTimestamp($max), $this->sanitizeTimeZone($timezone));
+        return $this->fakerGenerator->dateTimeThisCentury(Sanitize::timestamp($max), Sanitize::timeZoneName($timezone));
     }
 
     /**
@@ -178,7 +177,7 @@ trait Time
      */
     public function dateTimeThisDecade(DateTimeInterface|int|string $max = 'now', DateTimeZone|string|null $timezone = null): DateTime
     {
-        return $this->fakerGenerator->dateTimeThisDecade($this->sanitizeTimestamp($max), $this->sanitizeTimeZone($timezone));
+        return $this->fakerGenerator->dateTimeThisDecade(Sanitize::timestamp($max), Sanitize::timeZoneName($timezone));
     }
 
     /**
@@ -191,7 +190,7 @@ trait Time
      */
     public function dateTimeThisYear(DateTimeInterface|int|string $max = 'now', DateTimeZone|string|null $timezone = null): DateTime
     {
-        return $this->fakerGenerator->dateTimeThisYear($this->sanitizeTimestamp($max), $this->sanitizeTimeZone($timezone));
+        return $this->fakerGenerator->dateTimeThisYear(Sanitize::timestamp($max), Sanitize::timeZoneName($timezone));
     }
 
     /**
@@ -204,7 +203,7 @@ trait Time
      */
     public function dateTimeThisMonth(DateTimeInterface|int|string $max = 'now', DateTimeZone|string|null $timezone = null): DateTime
     {
-        return $this->fakerGenerator->dateTimeThisMonth($this->sanitizeTimestamp($max), $this->sanitizeTimeZone($timezone));
+        return $this->fakerGenerator->dateTimeThisMonth(Sanitize::timestamp($max), Sanitize::timeZoneName($timezone));
     }
 
     /**
@@ -220,7 +219,7 @@ trait Time
      */
     public function amPm(DateTimeInterface|int|string $max = 'now'): string
     {
-        return $this->fakerGenerator->amPm($this->sanitizeTimestamp($max));
+        return $this->fakerGenerator->amPm(Sanitize::timestamp($max));
     }
 
     /**
@@ -234,7 +233,7 @@ trait Time
      */
     public function dayOfMonth(DateTimeInterface|int|string $max = 'now'): string
     {
-        return $this->fakerGenerator->dayOfMonth($this->sanitizeTimestamp($max));
+        return $this->fakerGenerator->dayOfMonth(Sanitize::timestamp($max));
     }
 
     /**
@@ -248,7 +247,7 @@ trait Time
      */
     public function dayOfWeek(DateTimeInterface|int|string $max = 'now'): string
     {
-        return $this->fakerGenerator->dayOfWeek($this->sanitizeTimestamp($max));
+        return $this->fakerGenerator->dayOfWeek(Sanitize::timestamp($max));
     }
 
     /**
@@ -262,7 +261,7 @@ trait Time
      */
     public function month(DateTimeInterface|int|string $max = 'now'): string
     {
-        return $this->fakerGenerator->month($this->sanitizeTimestamp($max));
+        return $this->fakerGenerator->month(Sanitize::timestamp($max));
     }
 
     /**
@@ -276,7 +275,7 @@ trait Time
      */
     public function monthName(DateTimeInterface|int|string $max = 'now'): string
     {
-        return $this->fakerGenerator->monthName($this->sanitizeTimestamp($max));
+        return $this->fakerGenerator->monthName(Sanitize::timestamp($max));
     }
 
     /**
@@ -290,7 +289,7 @@ trait Time
      */
     public function year(DateTimeInterface|int|string $max = 'now'): string
     {
-        return $this->fakerGenerator->year($this->sanitizeTimestamp($max));
+        return $this->fakerGenerator->year(Sanitize::timestamp($max));
     }
 
     /**
@@ -315,97 +314,5 @@ trait Time
     public function timezone(?string $countryCode = null): string
     {
         return $this->fakerGenerator->timezone($countryCode);
-    }
-
-    private function sanitizeTimestamp(DateTimeInterface|int|string $timestamp): int
-    {
-        if (\is_int($timestamp)) {
-            return $timestamp;
-        }
-
-        if (\is_numeric($timestamp)) {
-            return (int) $timestamp;
-        }
-
-        if ($timestamp instanceof DateTimeInterface) {
-            return $timestamp->getTimestamp();
-        }
-
-        $timestamp = \strtotime($timestamp ?: 'now');
-
-        if (false === $timestamp) {
-            throw new InvalidArgumentException('Invalid timestamp provided');
-        }
-
-        return $timestamp;
-    }
-
-    private function sanitizeTimeZone(DateTimeZone|string|null $timezone): ?string
-    {
-        if ($timezone instanceof DateTimeZone) {
-            return $timezone->getName();
-        }
-
-        /** @psalm-suppress RiskyTruthyFalsyComparison */
-        return $timezone ?: null;
-    }
-
-    private function sanitizeDateInterval(DateInterval|string $interval): string
-    {
-        if (\is_string($interval)) {
-            return $interval;
-        }
-
-        $sign = ($interval->invert) ? -1 : +1;
-        $tokens = [];
-
-        if ($interval->y) {
-            $tokens[] = \sprintf('%s years', $interval->y * $sign);
-        }
-
-        if ($interval->m) {
-            $tokens[] = \sprintf('%s months', $interval->m * $sign);
-        }
-
-        if ($interval->d) {
-            $tokens[] = \sprintf('%s days', $interval->d * $sign);
-        }
-
-        if ($interval->h) {
-            $tokens[] = \sprintf('%s hours', $interval->h * $sign);
-        }
-
-        if ($interval->i) {
-            $tokens[] = \sprintf('%s minutes', $interval->i * $sign);
-        }
-
-        if ($interval->s) {
-            $tokens[] = \sprintf('%s seconds', $interval->s * $sign);
-        }
-
-        /** @psalm-suppress InvalidOperand */
-        if ($interval->f) {
-            $tokens[] = \sprintf('%s microseconds', ((int) \round($interval->f * 1_000_000)) * $sign);
-        }
-
-        return \implode(' + ', $tokens) ?: '0 seconds';
-    }
-
-    private function sanitizeDateTime(DateTimeInterface|int|string $timestamp): DateTime
-    {
-        if ($timestamp instanceof DateTime) {
-            return $timestamp;
-        }
-
-        if ($timestamp instanceof DateTimeImmutable) {
-            return DateTime::createFromImmutable($timestamp);
-        }
-
-        if (\is_int($timestamp) || \is_numeric($timestamp)) {
-            /** @var DateTime */
-            return DateTime::createFromFormat('U', (string) $timestamp);
-        }
-
-        return new DateTime($timestamp ?: 'now');
     }
 }
