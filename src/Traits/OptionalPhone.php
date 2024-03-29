@@ -7,7 +7,7 @@ namespace Hereldar\FakerHelper\Traits;
 trait OptionalPhone
 {
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example '555-123-546'
      *
@@ -19,7 +19,7 @@ trait OptionalPhone
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example '+11134567890'
      *
@@ -38,7 +38,7 @@ trait OptionalPhone
      *
      * @example '720084494799532'
      *
-     * @return ?non-empty-string $imei
+     * @return non-empty-string|null $imei
      *
      * @psalm-suppress MixedInferredReturnType
      * @psalm-suppress MoreSpecificReturnType

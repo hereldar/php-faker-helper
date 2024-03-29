@@ -9,7 +9,7 @@ trait OptionalPerson
     /**
      * @param string|null $gender 'male', 'female' or null for any
      *
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'John Doe'
      *
@@ -23,7 +23,7 @@ trait OptionalPerson
     /**
      * @param string|null $gender 'male', 'female' or null for any
      *
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'John'
      *
@@ -35,7 +35,7 @@ trait OptionalPerson
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @psalm-suppress MixedInferredReturnType
      */
@@ -45,7 +45,7 @@ trait OptionalPerson
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @psalm-suppress MixedInferredReturnType
      */
@@ -55,7 +55,7 @@ trait OptionalPerson
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'Doe'
      *
@@ -69,7 +69,7 @@ trait OptionalPerson
     /**
      * @param string|null $gender 'male', 'female' or null for any
      *
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'Mrs.'
      *
@@ -81,7 +81,7 @@ trait OptionalPerson
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'Mr.'
      *
@@ -93,7 +93,7 @@ trait OptionalPerson
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'Mrs.'
      *

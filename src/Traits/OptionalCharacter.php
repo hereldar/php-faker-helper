@@ -9,7 +9,7 @@ trait OptionalCharacter
     /**
      * Returns a random letter from a to z.
      *
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @psalm-suppress MixedInferredReturnType
      */
@@ -21,7 +21,7 @@ trait OptionalCharacter
     /**
      * Returns a random ASCII character (excluding accents and special chars).
      *
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @psalm-suppress MixedInferredReturnType
      */
@@ -35,7 +35,7 @@ trait OptionalCharacter
      *
      * @see https://en.wikipedia.org/wiki/Emoji#Unicode_blocks
      *
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @psalm-suppress MixedInferredReturnType
      */
@@ -45,7 +45,7 @@ trait OptionalCharacter
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @deprecated
      * Returns a random letter from a to z
@@ -58,7 +58,7 @@ trait OptionalCharacter
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @deprecated
      * Returns a random ASCII character (excluding accents and special chars)

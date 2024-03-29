@@ -7,7 +7,7 @@ namespace Hereldar\FakerHelper\Traits;
 trait OptionalText
 {
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'Lorem'
      *
@@ -43,7 +43,7 @@ trait OptionalText
      * @param bool $variableNbWords set to false if you want exactly $nbWords returned,
      *                              otherwise $nbWords may vary by +/-40% with a minimum of 1
      *
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'Lorem ipsum dolor sit amet.'
      *
@@ -79,7 +79,7 @@ trait OptionalText
      * @param bool $variableNbSentences set to false if you want exactly $nbSentences returned,
      *                                  otherwise $nbSentences may vary by +/-40% with a minimum of 1
      *
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'Sapiente sunt omnis. Ut pariatur ad autem ducimus et. Voluptas rem voluptas sint modi dolorem amet.'
      *
@@ -114,7 +114,7 @@ trait OptionalText
      *
      * @param int $maxNbChars Maximum number of characters the text should contain (minimum 5)
      *
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'Sapiente sunt omnis. Ut pariatur ad autem ducimus et. Voluptas rem voluptas sint modi dolorem amet.'
      *
@@ -137,7 +137,7 @@ trait OptionalText
      *                       generated text usually doesn't make sense. Higher index sizes (up to 5)
      *                       produce more correct text, at the price of less randomness.
      *
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'Alice, swallowing down her flamingo, and began by taking the little golden key'
      *
@@ -161,7 +161,7 @@ trait OptionalText
      *                       generated text usually doesn't make sense. Higher index sizes (up to 5)
      *                       produce more correct text, at the price of less randomness.
      *
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'Alice, swallowing down her flamingo, and began by taking the little golden key'
      *

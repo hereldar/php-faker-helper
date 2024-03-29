@@ -7,7 +7,7 @@ namespace Hereldar\FakerHelper\Traits;
 trait OptionalHtml
 {
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @psalm-suppress MixedInferredReturnType
      */
@@ -17,7 +17,7 @@ trait OptionalHtml
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @deprecated
      *

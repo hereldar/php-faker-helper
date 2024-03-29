@@ -7,7 +7,7 @@ namespace Hereldar\FakerHelper\Traits;
 trait OptionalAddress
 {
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'town'
      *
@@ -19,7 +19,7 @@ trait OptionalAddress
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'Avenue'
      *
@@ -31,7 +31,7 @@ trait OptionalAddress
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example '791'
      *
@@ -43,7 +43,7 @@ trait OptionalAddress
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'Sashabury'
      *
@@ -55,7 +55,7 @@ trait OptionalAddress
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'Crist Parks'
      *
@@ -67,7 +67,7 @@ trait OptionalAddress
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example '791 Crist Parks'
      *
@@ -79,7 +79,7 @@ trait OptionalAddress
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 86039-9874
      *
@@ -91,7 +91,7 @@ trait OptionalAddress
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example '791 Crist Parks, Sashabury, IL 86039-9874'
      *
@@ -103,7 +103,7 @@ trait OptionalAddress
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'Japan'
      *
@@ -142,7 +142,7 @@ trait OptionalAddress
     }
 
     /**
-     * @return ?float[]
+     * @return float[]|null
      *
      * @example ['77.147489', '86.211205']
      *

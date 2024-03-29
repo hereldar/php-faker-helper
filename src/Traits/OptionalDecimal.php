@@ -9,7 +9,7 @@ trait OptionalDecimal
     /**
      * Return a random float number.
      *
-     * @param ?int<0, max> $nbMaxDecimals
+     * @param int<0, max>|null $nbMaxDecimals
      *
      * @example 48.8932
      *
@@ -23,7 +23,7 @@ trait OptionalDecimal
     /**
      * Return a random float number.
      *
-     * @param ?int<0, max> $nbMaxDecimals
+     * @param int<0, max>|null $nbMaxDecimals
      *
      * @deprecated
      *

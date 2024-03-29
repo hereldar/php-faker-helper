@@ -9,7 +9,7 @@ trait Digit
     /**
      * Returns a random number between 0 and 9.
      *
-     * @param ?int<0, 9> $except
+     * @param int<0, 9>|null $except
      *
      * @psalm-suppress MixedInferredReturnType
      */

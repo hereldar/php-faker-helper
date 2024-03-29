@@ -7,7 +7,7 @@ namespace Hereldar\FakerHelper\Traits;
 trait OptionalColor
 {
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example '#fa3cc2'
      *
@@ -19,7 +19,7 @@ trait OptionalColor
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example '#ff0044'
      *
@@ -31,7 +31,7 @@ trait OptionalColor
     }
 
     /**
-     * @return ?array{int<0, 255>, int<0, 255>, int<0, 255>}
+     * @return array{int<0, 255>, int<0, 255>, int<0, 255>}|null
      *
      * @example 'array(0,255,122)'
      *
@@ -43,7 +43,7 @@ trait OptionalColor
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example '0,255,122'
      *
@@ -55,7 +55,7 @@ trait OptionalColor
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'rgb(0,255,122)'
      *
@@ -67,7 +67,7 @@ trait OptionalColor
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'rgba(0,255,122,0.8)'
      *
@@ -79,7 +79,7 @@ trait OptionalColor
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'blue'
      *
@@ -91,7 +91,7 @@ trait OptionalColor
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'NavajoWhite'
      *
@@ -103,7 +103,7 @@ trait OptionalColor
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example '340,50,20'
      *
@@ -115,7 +115,7 @@ trait OptionalColor
     }
 
     /**
-     * @return ?array{int<0, 360>, int<0, 100>, int<0, 100>}
+     * @return array{int<0, 360>, int<0, 100>, int<0, 100>}|null
      *
      * @example [340, 50, 20]
      *

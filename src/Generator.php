@@ -61,7 +61,7 @@ class Generator implements GeneratorConstructor
     use Uuid;
     use Version;
 
-    /** @var ?static */
+    /** @var static|null */
     protected ?self $uniqueGenerator = null;
 
     public function __construct(
@@ -126,7 +126,7 @@ class Generator implements GeneratorConstructor
      * print_r($values); // [0, 4, 8, 4, 2, 6, 0, 8, 8, 6]
      * </code>
      *
-     * @param ?Closure $validator A function returning true for valid values
+     * @param Closure|null $validator A function returning true for valid values
      * @param int $maxRetries maximum number of retries to find a valid value,
      *                        After which an OverflowException is thrown
      *

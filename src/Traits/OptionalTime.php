@@ -18,7 +18,7 @@ trait OptionalTime
      *
      * @param DateTimeInterface|int|string $max maximum timestamp used as random end limit, default to "now"
      *
-     * @return ?int<0, max>
+     * @return int<0, max>|null
      *
      * @example 1061306726
      *
@@ -26,7 +26,7 @@ trait OptionalTime
      */
     public function unixTime(DateTimeInterface|int|string $max = 'now'): ?int
     {
-        /** @var ?int<0, max> */
+        /** @var int<0, max>|null */
         return $this->fakerGenerator->unixTime($this->sanitizeTimestamp($max));
     }
 
@@ -71,7 +71,7 @@ trait OptionalTime
      *
      * @param DateTimeInterface|int|string $max maximum timestamp used as random end limit, default to "now"
      *
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example '2003-10-21T16:05:52+0000'
      *
@@ -87,7 +87,7 @@ trait OptionalTime
      *
      * @param DateTimeInterface|int|string $max maximum timestamp used as random end limit, default to "now"
      *
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example '2008-11-27'
      *
@@ -103,7 +103,7 @@ trait OptionalTime
      *
      * @param DateTimeInterface|int|string $max maximum timestamp used as random end limit, default to "now"
      *
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example '15:02:34'
      *
@@ -212,7 +212,7 @@ trait OptionalTime
      *
      * @param DateTimeInterface|int|string $max maximum timestamp used as random end limit, default to "now"
      *
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'am'
      *
@@ -226,7 +226,7 @@ trait OptionalTime
     /**
      * @param DateTimeInterface|int|string $max maximum timestamp used as random end limit, default to "now"
      *
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example '22'
      *
@@ -240,7 +240,7 @@ trait OptionalTime
     /**
      * @param DateTimeInterface|int|string $max maximum timestamp used as random end limit, default to "now"
      *
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'Tuesday'
      *
@@ -254,7 +254,7 @@ trait OptionalTime
     /**
      * @param DateTimeInterface|int|string $max maximum timestamp used as random end limit, default to "now"
      *
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example '7'
      *
@@ -268,7 +268,7 @@ trait OptionalTime
     /**
      * @param DateTimeInterface|int|string $max maximum timestamp used as random end limit, default to "now"
      *
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'September'
      *
@@ -282,7 +282,7 @@ trait OptionalTime
     /**
      * @param DateTimeInterface|int|string $max maximum timestamp used as random end limit, default to "now"
      *
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example '1987'
      *
@@ -294,7 +294,7 @@ trait OptionalTime
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'XVII'
      *
@@ -306,7 +306,7 @@ trait OptionalTime
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'Europe/Paris'
      *

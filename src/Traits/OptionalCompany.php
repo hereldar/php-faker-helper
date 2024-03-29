@@ -7,7 +7,7 @@ namespace Hereldar\FakerHelper\Traits;
 trait OptionalCompany
 {
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'Acme Ltd'
      *
@@ -19,7 +19,7 @@ trait OptionalCompany
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'Ltd'
      *
@@ -31,7 +31,7 @@ trait OptionalCompany
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'Job'
      *

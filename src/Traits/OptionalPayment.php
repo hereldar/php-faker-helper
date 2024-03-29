@@ -11,7 +11,7 @@ trait OptionalPayment
     /**
      * Returns a credit card vendor name.
      *
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'MasterCard'
      *
@@ -29,7 +29,7 @@ trait OptionalPayment
      * @param bool $formatted Set to true if the output string should contain one separator every 4 digits
      * @param string $separator Separator string for formatting card number. Defaults to dash (-).
      *
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example '4485480221084675'
      *
@@ -55,7 +55,7 @@ trait OptionalPayment
     /**
      * @param bool $valid True (by default) to get a valid expiration date, false to get a maybe valid date
      *
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example '04/13'
      *
@@ -69,12 +69,12 @@ trait OptionalPayment
     /**
      * @param bool $valid True (by default) to get a valid expiration date, false to get a maybe valid date
      *
-     * @return ?array{
-     *      type: string,
-     *      number: string,
-     *      name: string,
-     *      expirationDate: string,
-     *  }
+     * @return array{
+     *     type: string,
+     *     number: string,
+     *     name: string,
+     *     expirationDate: string,
+     * }|null
      *
      * @psalm-suppress MixedInferredReturnType
      */
@@ -92,7 +92,7 @@ trait OptionalPayment
      * @param string $prefix for generating bank account number of a specific bank
      * @param int|null $length total length without country code and 2 check digits
      *
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @psalm-suppress MixedInferredReturnType
      */
@@ -104,7 +104,7 @@ trait OptionalPayment
     /**
      * Return the String of a SWIFT/BIC number.
      *
-     * @return ?non-empty-string Swift/Bic number
+     * @return non-empty-string|null Swift/Bic number
      *
      * @see    http://en.wikipedia.org/wiki/ISO_9362
      *

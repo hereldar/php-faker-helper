@@ -7,7 +7,7 @@ namespace Hereldar\FakerHelper\Traits;
 trait OptionalIsoCode
 {
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'fr_FR'
      *
@@ -19,7 +19,7 @@ trait OptionalIsoCode
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
      *
@@ -33,7 +33,7 @@ trait OptionalIsoCode
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3
      *
@@ -47,7 +47,7 @@ trait OptionalIsoCode
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'fr'
      *
@@ -59,7 +59,7 @@ trait OptionalIsoCode
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
      *

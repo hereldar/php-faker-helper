@@ -7,7 +7,7 @@ namespace Hereldar\FakerHelper\Traits;
 trait OptionalInternet
 {
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'jdoe@acme.biz'
      *
@@ -19,7 +19,7 @@ trait OptionalInternet
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'jdoe@example.com'
      *
@@ -31,7 +31,7 @@ trait OptionalInternet
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'jdoe@gmail.com'
      *
@@ -43,7 +43,7 @@ trait OptionalInternet
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'jdoe@dawson.com'
      *
@@ -55,7 +55,7 @@ trait OptionalInternet
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'gmail.com'
      *
@@ -67,7 +67,7 @@ trait OptionalInternet
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'example.org'
      *
@@ -79,7 +79,7 @@ trait OptionalInternet
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'jdoe'
      *
@@ -94,7 +94,7 @@ trait OptionalInternet
      * @param int<1, max> $minLength
      * @param int<1, max> $maxLength
      *
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'fY4èHdZv68'
      *
@@ -106,7 +106,7 @@ trait OptionalInternet
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'tiramisu.com'
      *
@@ -118,7 +118,7 @@ trait OptionalInternet
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'faber'
      *
@@ -130,7 +130,7 @@ trait OptionalInternet
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'com'
      *
@@ -142,7 +142,7 @@ trait OptionalInternet
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'http://www.runolfsdottir.com/'
      *
@@ -154,7 +154,7 @@ trait OptionalInternet
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example 'aut-repellat-commodi-vel-itaque-nihil-id-saepe-nostrum'
      *
@@ -166,7 +166,7 @@ trait OptionalInternet
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example '237.149.115.38'
      *
@@ -178,7 +178,7 @@ trait OptionalInternet
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example '35cd:186d:3e23:2986:ef9f:5b41:42a4:e6f1'
      *
@@ -190,7 +190,7 @@ trait OptionalInternet
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example '10.1.1.17'
      *
@@ -202,7 +202,7 @@ trait OptionalInternet
     }
 
     /**
-     * @return ?non-empty-string
+     * @return non-empty-string|null
      *
      * @example '32:F1:39:2F:D6:18'
      *

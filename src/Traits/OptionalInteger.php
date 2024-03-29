@@ -10,7 +10,7 @@ trait OptionalInteger
      * Returns a random integer with 0 to $nbDigits digits.
      * The maximum value returned is mt_getrandmax().
      *
-     * @param ?int<1, max> $nbDigits Defaults to a random number between 1 and 9
+     * @param int<1, max>|null $nbDigits Defaults to a random number between 1 and 9
      * @param bool $strict Whether the returned number should have exactly $nbDigits
      *
      * @example 79907610
@@ -41,7 +41,7 @@ trait OptionalInteger
      * Returns a random integer with 0 to $nbDigits digits.
      * The maximum value returned is mt_getrandmax().
      *
-     * @param ?int<1, max> $nbDigits Defaults to a random number between 1 and 9
+     * @param int<1, max>|null $nbDigits Defaults to a random number between 1 and 9
      * @param bool $strict Whether the returned number should have exactly $nbDigits
      *
      * @deprecated
