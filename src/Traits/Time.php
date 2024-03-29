@@ -346,6 +346,7 @@ trait Time
             return $timezone->getName();
         }
 
+        /** @psalm-suppress RiskyTruthyFalsyComparison */
         return $timezone ?: null;
     }
 
@@ -382,6 +383,7 @@ trait Time
             $tokens[] = \sprintf('%s seconds', $interval->s * $sign);
         }
 
+        /** @psalm-suppress InvalidOperand */
         if ($interval->f) {
             $tokens[] = \sprintf('%s microseconds', ((int) \round($interval->f * 1_000_000)) * $sign);
         }
