@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Hereldar\FakerHelper;
 
 use Hereldar\FakerHelper\Enums\Locale;
-use Webmozart\Assert\Assert;
+use Hereldar\FakerHelper\Helpers\Validate;
 
 final class ConfigBuilder
 {
@@ -21,11 +21,7 @@ final class ConfigBuilder
     public function defaultLocale(Locale|string $locale): self
     {
         if (\is_string($locale)) {
-            Assert::regex(
-                value: $locale,
-                pattern: '/^[a-z]{2}_(?:[A-Z][a-z]{3}_)?[A-Z]{2}$/',
-                message: 'The locale should be a combination of an ISO language code and an ISO country code, separated by an underscore.'
-            );
+            Validate::locale($locale);
             $locale = Locale::from($locale);
         }
 

@@ -6,7 +6,7 @@ namespace Hereldar\FakerHelper;
 
 use Faker\Factory as FakerFactory;
 use Hereldar\FakerHelper\Enums\Locale;
-use Webmozart\Assert\Assert;
+use Hereldar\FakerHelper\Helpers\Validate;
 
 final class Factory
 {
@@ -25,11 +25,7 @@ final class Factory
         } elseif ($locale instanceof Locale) {
             $locale = $locale->value();
         } else {
-            Assert::regex(
-                value: $locale,
-                pattern: '/^[a-z]{2}_(?:[A-Z][a-z]{3}_)?[A-Z]{2}$/',
-                message: 'The locale should be a combination of an ISO language code and an ISO country code, separated by an underscore.'
-            );
+            Validate::locale($locale);
         }
 
         if (isset(self::$cache[$locale])) {

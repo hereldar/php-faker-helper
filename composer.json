@@ -16,8 +16,7 @@
         }
     ],
     "require": {
-        "fakerphp/faker": "^1.23",
-        "webmozart/assert": "^1.0"
+        "fakerphp/faker": "^1.23"
     },
     "require-dev": {
         "hereldar/coding-style": "^0.1.2",
