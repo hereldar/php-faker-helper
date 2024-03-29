@@ -2,8 +2,10 @@
 
 declare(strict_types=1);
 
+namespace Hereldar\FakerHelper\Tests;
+
 use Hereldar\FakerHelper\Factory;
-use Hereldar\FakerHelper\Tests\TestCase;
+use ReflectionObject;
 
 final class UniqueGeneratorTest extends TestCase
 {

@@ -2,8 +2,10 @@
 
 declare(strict_types=1);
 
+namespace Hereldar\FakerHelper\Tests;
+
 use Hereldar\FakerHelper\Factory;
-use Hereldar\FakerHelper\Tests\TestCase;
+use ReflectionObject;
 
 final class OptionalGeneratorTest extends TestCase
 {
@@ -28,7 +30,7 @@ final class OptionalGeneratorTest extends TestCase
 
             if ($method->isStatic()
                 || !$method->isPublic()
-                || in_array($methodName, self::EXCLUDED_METHODS, true)) {
+                || \in_array($methodName, self::EXCLUDED_METHODS, true)) {
                 continue;
             }
 
