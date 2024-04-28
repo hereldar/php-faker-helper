@@ -11,6 +11,6 @@ final class ConfigTest extends PHPUnitTestCase
 {
     public function testDefaultLocale(): void
     {
-        self::assertSame('en_US', Config::defaultLocale()->value());
+        self::assertSame('en_US', Config::defaultLocale()->value);
     }
 }

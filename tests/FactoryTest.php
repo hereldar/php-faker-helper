@@ -30,7 +30,7 @@ final class FactoryTest extends TestCase
     {
         foreach (Locale::cases() as $locale) {
             $generator1 = Factory::make($locale);
-            $generator2 = Factory::make($locale->value());
+            $generator2 = Factory::make($locale->value);
 
             self::assertSame($generator1, $generator2);
         }

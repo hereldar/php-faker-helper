@@ -21,8 +21,8 @@ final class LocaleTest extends TestCase
             $dirname = $file->getFilename();
 
             self::assertContains($dirname, Locale::values());
-            self::assertSame($dirname, Locale::from($dirname)->value());
-            self::assertSame($dirname, Locale::tryFrom($dirname)?->value());
+            self::assertSame($dirname, Locale::from($dirname)->value);
+            self::assertSame($dirname, Locale::tryFrom($dirname)?->value);
             self::assertSame(Locale::from($dirname), Locale::tryFrom($dirname));
         }
     }

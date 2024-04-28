@@ -21,9 +21,9 @@ final class Factory
     public static function make(Locale|string|null $locale = null): Generator
     {
         if (null === $locale) {
-            $locale = Config::defaultLocale()->value();
+            $locale = Config::defaultLocale()->value;
         } elseif ($locale instanceof Locale) {
-            $locale = $locale->value();
+            $locale = $locale->value;
         } else {
             Validate::locale($locale);
         }

@@ -20,7 +20,7 @@ final class ConfigBuilderTest extends TestCase
 
         foreach (Locale::values() as $locale) {
             $this->configBuilder->defaultLocale($locale);
-            self::assertSame($locale, Config::defaultLocale()->value());
+            self::assertSame($locale, Config::defaultLocale()->value);
         }
     }
 
@@ -35,7 +35,7 @@ final class ConfigBuilderTest extends TestCase
     public function testUnknownDefaultLocale(): void
     {
         $this->expectException(ValueError::class);
-        $this->expectExceptionMessage("'uu_UU' is not a valid scalar value for enum Hereldar\\FakerHelper\\Enums\\Locale");
+        $this->expectExceptionMessage("'uu_UU' is not a valid backing value for enum Hereldar\\FakerHelper\\Enums\\Locale");
 
         $this->configBuilder->defaultLocale('uu_UU');
     }

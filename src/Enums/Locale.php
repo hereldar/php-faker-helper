@@ -4,13 +4,16 @@ declare(strict_types=1);
 
 namespace Hereldar\FakerHelper\Enums;
 
-use ValueError;
-
 /**
+ * @property-read value-of<Locale::VALUES> $value
+ *
  * TODO: convert to a backed enum when PHP 8.1 is the minimum version.
  */
 final class Locale
 {
+    /** @use BackedEnum<string> */
+    use BackedEnum;
+
     public const arEG = 'ar_EG';
     public const arJO = 'ar_JO';
     public const arSA = 'ar_SA';
@@ -164,63 +167,4 @@ final class Locale
         self::zhCN,
         self::zhTW,
     ];
-
-    /** @var array<non-empty-string, self> */
-    private static array $cases = [];
-
-    /** @param non-empty-string $value */
-    private function __construct(
-        private string $value,
-    ) {}
-
-    /**
-     * @return list<self>
-     */
-    public static function cases(): array
-    {
-        $list = [];
-
-        foreach (self::VALUES as $value) {
-            $list[] = self::$cases[$value] ??= new self($value);
-        }
-
-        return $list;
-    }
-
-    /**
-     * @return list<non-empty-string>
-     */
-    public static function values(): array
-    {
-        return self::VALUES;
-    }
-
-    /**
-     * @throws ValueError
-     */
-    public static function from(int|string $value): self
-    {
-        if (!\in_array($value, self::VALUES, true)) {
-            throw new ValueError(\sprintf('%s is not a valid scalar value for enum %s', \var_export($value, true), self::class));
-        }
-
-        return self::$cases[$value] ??= new self($value);
-    }
-
-    public static function tryFrom(int|string $value): ?self
-    {
-        if (!\in_array($value, self::VALUES, true)) {
-            return null;
-        }
-
-        return self::$cases[$value] ??= new self($value);
-    }
-
-    /**
-     * @return non-empty-string
-     */
-    public function value(): string
-    {
-        return $this->value;
-    }
 }
