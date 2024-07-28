@@ -23,7 +23,7 @@ trait Integer
     }
 
     /**
-     * Returns a random number between $int1 and $int2 (any order).
+     * Returns a random integer between $int1 and $int2 (any order).
      *
      * @param int $int1 default to 0
      * @param int $int2 defaults to 32 bit max integer, ie 2147483647
@@ -35,6 +35,70 @@ trait Integer
     public function integerBetween(int $int1 = 0, int $int2 = 2147483647): int
     {
         return $this->fakerGenerator->numberBetween($int1, $int2);
+    }
+
+    /**
+     * Returns a positive random integer.
+     *
+     * @return int<1, max>
+     *
+     * @example 79907610
+     *
+     * @psalm-suppress MixedInferredReturnType
+     * @psalm-suppress MoreSpecificReturnType
+     */
+    public function positiveInteger(): int
+    {
+        // @phpstan-ignore return.type
+        return $this->fakerGenerator->numberBetween(1, \PHP_INT_MAX);
+    }
+
+    /**
+     * Returns a negative random integer.
+     *
+     * @return int<min, -1>
+     *
+     * @example -79907610
+     *
+     * @psalm-suppress MixedInferredReturnType
+     * @psalm-suppress MoreSpecificReturnType
+     */
+    public function negativeInteger(): int
+    {
+        // @phpstan-ignore return.type
+        return $this->fakerGenerator->numberBetween(\PHP_INT_MIN, -1);
+    }
+
+    /**
+     * Returns a non-negative random integer.
+     *
+     * @return int<0, max>
+     *
+     * @example 79907610
+     *
+     * @psalm-suppress MixedInferredReturnType
+     * @psalm-suppress MoreSpecificReturnType
+     */
+    public function nonNegativeInteger(): int
+    {
+        // @phpstan-ignore return.type
+        return $this->fakerGenerator->numberBetween(0, \PHP_INT_MAX);
+    }
+
+    /**
+     * Returns a non-positive random integer.
+     *
+     * @return int<min, 0>
+     *
+     * @example -79907610
+     *
+     * @psalm-suppress MixedInferredReturnType
+     * @psalm-suppress MoreSpecificReturnType
+     */
+    public function nonPositiveInteger(): int
+    {
+        // @phpstan-ignore return.type
+        return $this->fakerGenerator->numberBetween(\PHP_INT_MIN, 0);
     }
 
     /**
