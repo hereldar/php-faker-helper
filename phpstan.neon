@@ -3,7 +3,6 @@ parameters:
     paths:
         - src
         - tests
-    checkGenericClassInNonGenericObjectType: false
     ignoreErrors:
         - '#Method Hereldar\\FakerHelper\\Generator::\w+\(\) should return non-empty-string but returns string\.#'
         - '#Method Hereldar\\FakerHelper\\Generator::\w+\(\) should return array\{[^}]+\} but returns array\.#'

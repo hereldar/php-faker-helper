@@ -23,19 +23,19 @@ trait BackedEnum
         private int|string $backingValue,
     ) {}
 
-    public function __get(string $name)
+    public function __get(string $name): int|string
     {
         return match ($name) {
             'value' => $this->backingValue,
-            default => throw new Error("Attempt to read undefined property $name"),
+            default => throw new Error("Attempt to read undefined property {$name}"),
         };
     }
 
-    public function __set(string $name, $value): void
+    public function __set(string $name, mixed $value): void
     {
         match ($name) {
             'value' => throw new Error('Attempt to write read-only property value'),
-            default => throw new Error("Attempt to write undefined property $name"),
+            default => throw new Error("Attempt to write undefined property {$name}"),
         };
     }
 
@@ -55,6 +55,10 @@ trait BackedEnum
         $list = [];
 
         foreach (self::VALUES as $value) {
+            /**
+             * @psalm-suppress InvalidPropertyAssignmentValue
+             * @psalm-suppress PossiblyUndefinedArrayOffset
+             */
             $list[] = self::$cases[$value] ??= new self($value);
         }
 
@@ -71,6 +75,8 @@ trait BackedEnum
 
     /**
      * @throws ValueError
+     *
+     * @psalm-suppress InvalidNullableReturnType
      */
     public static function from(int|string $value): static
     {
@@ -78,6 +84,10 @@ trait BackedEnum
             throw new ValueError(\sprintf('%s is not a valid backing value for enum %s', \var_export($value, true), self::class));
         }
 
+        /**
+         * @psalm-suppress InvalidPropertyAssignmentValue
+         * @psalm-suppress PossiblyUndefinedArrayOffset
+         */
         return self::$cases[$value] ??= new self($value);
     }
 
@@ -87,6 +97,10 @@ trait BackedEnum
             return null;
         }
 
+        /**
+         * @psalm-suppress InvalidPropertyAssignmentValue
+         * @psalm-suppress PossiblyUndefinedArrayOffset
+         */
         return self::$cases[$value] ??= new self($value);
     }
 }

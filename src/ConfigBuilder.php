@@ -14,8 +14,6 @@ final class ConfigBuilder
     ) {}
 
     /**
-     * @param Locale|non-empty-string $locale
-     *
      * @return $this
      */
     public function defaultLocale(Locale|string $locale): self

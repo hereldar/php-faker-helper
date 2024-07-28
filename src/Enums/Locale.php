@@ -11,7 +11,9 @@ namespace Hereldar\FakerHelper\Enums;
  */
 final class Locale
 {
-    /** @use BackedEnum<string> */
+    /**
+     * @use BackedEnum<string>
+     */
     use BackedEnum;
 
     public const arEG = 'ar_EG';

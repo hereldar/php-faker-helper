@@ -6,9 +6,6 @@ use Hereldar\FakerHelper\Factory;
 use Hereldar\FakerHelper\Generator;
 
 if (!function_exists('fake')) {
-    /**
-     * @param non-empty-string|null $locale
-     */
     function fake(?string $locale = null): Generator
     {
         return Factory::make($locale);

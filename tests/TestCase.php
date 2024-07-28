@@ -30,6 +30,9 @@ abstract class TestCase extends PHPUnitTestCase
         $this->configBuilder->defaultLocale(self::$defaultLocale);
     }
 
+    /**
+     * @param ReflectionClass<object> $class
+     */
     public static function assertMethodExists(ReflectionClass $class, string $methodName): void
     {
         self::assertTrue(

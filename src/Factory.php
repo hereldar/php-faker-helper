@@ -11,13 +11,10 @@ use Hereldar\FakerHelper\Helpers\Validate;
 final class Factory
 {
     /**
-     * @var array<non-empty-string, Generator>
+     * @var array<string, Generator>
      */
     private static array $cache = [];
 
-    /**
-     * @param Locale|non-empty-string|null $locale
-     */
     public static function make(Locale|string|null $locale = null): Generator
     {
         if (null === $locale) {

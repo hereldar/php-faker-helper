@@ -81,7 +81,7 @@ final class GeneratorTest extends TestCase
         $fakerGeneratorReflection = new ReflectionClass(FakerGenerator::class);
 
         $docComment = $fakerGeneratorReflection->getDocComment();
-        self::assertisString($docComment);
+        self::assertIsString($docComment);
 
         \preg_match_all('/@method\s+\S+\s+(\w+)\(/', $docComment, $matches);
 
