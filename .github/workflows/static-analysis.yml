@@ -41,7 +41,7 @@ jobs:
 
       - name: Run Psalm
         run: |
-          php -d memory_limit=-1 -d zend.enable_gc=0 -d error_reporting=-1 vendor/bin/phpstan --ansi --no-progress --error-format=github;
+          php -d memory_limit=-1 -d zend.enable_gc=0 -d error_reporting=-1 vendor/bin/phpstan --ansi --verbose --no-progress --error-format=github;
         env:
           PHP_VERSION: ${{ matrix.php }}
 
