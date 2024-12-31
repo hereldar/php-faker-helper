@@ -10,11 +10,10 @@ trait Text
      * @return non-empty-string
      *
      * @example 'Lorem'
-     *
-     * @psalm-suppress MixedInferredReturnType
      */
     public function word(): string
     {
+        /** @var non-empty-string */
         return $this->fakerGenerator->word();
     }
 
@@ -24,15 +23,14 @@ trait Text
      * @param int<0, max> $nb how many words to return
      * @param bool $asText if true the sentences are returned as one string
      *
-     * @return list<non-empty-string>|string
-     * @psalm-return ($asText is true ? string : list<non-empty-string>)
+     * @return list<non-empty-string>|non-empty-string
+     * @psalm-return ($asText is true ? non-empty-string : list<non-empty-string>)
      *
      * @example ['Lorem', 'ipsum', 'dolor']
-     *
-     * @psalm-suppress MixedInferredReturnType
      */
     public function words(int $nb = 3, bool $asText = false): array|string
     {
+        /** @var list<non-empty-string>|non-empty-string */
         return $this->fakerGenerator->words($nb, $asText);
     }
 
@@ -46,11 +44,10 @@ trait Text
      * @return non-empty-string
      *
      * @example 'Lorem ipsum dolor sit amet.'
-     *
-     * @psalm-suppress MixedInferredReturnType
      */
     public function sentence(int $nbWords = 6, bool $variableNbWords = true): string
     {
+        /** @var non-empty-string */
         return $this->fakerGenerator->sentence($nbWords, $variableNbWords);
     }
 
@@ -60,15 +57,14 @@ trait Text
      * @param int<0, max> $nb how many sentences to return
      * @param bool $asText if true the sentences are returned as one string
      *
-     * @return list<non-empty-string>|string
-     * @psalm-return ($asText is true ? string : list<non-empty-string>)
+     * @return list<non-empty-string>|non-empty-string
+     * @psalm-return ($asText is true ? non-empty-string : list<non-empty-string>)
      *
      * @example ['Lorem ipsum dolor sit amet.', 'Consectetur adipisicing eli.']
-     *
-     * @psalm-suppress MixedInferredReturnType
      */
     public function sentences(int $nb = 3, bool $asText = false): array|string
     {
+        /** @var list<non-empty-string>|non-empty-string */
         return $this->fakerGenerator->sentences($nb, $asText);
     }
 
@@ -82,11 +78,10 @@ trait Text
      * @return non-empty-string
      *
      * @example 'Sapiente sunt omnis. Ut pariatur ad autem ducimus et. Voluptas rem voluptas sint modi dolorem amet.'
-     *
-     * @psalm-suppress MixedInferredReturnType
      */
     public function paragraph(int $nbSentences = 3, bool $variableNbSentences = true): string
     {
+        /** @var non-empty-string */
         return $this->fakerGenerator->paragraph($nbSentences, $variableNbSentences);
     }
 
@@ -96,15 +91,14 @@ trait Text
      * @param int<0, max> $nb how many paragraphs to return
      * @param bool $asText if true the paragraphs are returned as one string, separated by two newlines
      *
-     * @return list<non-empty-string>|string
-     * @psalm-return ($asText is true ? string : list<non-empty-string>)
+     * @return list<non-empty-string>|non-empty-string
+     * @psalm-return ($asText is true ? non-empty-string : list<non-empty-string>)
      *
      * @example [$paragraph1, $paragraph2, $paragraph3]
-     *
-     * @psalm-suppress MixedInferredReturnType
      */
     public function paragraphs(int $nb = 3, bool $asText = false): array|string
     {
+        /** @var list<non-empty-string>|non-empty-string */
         return $this->fakerGenerator->paragraphs($nb, $asText);
     }
 
@@ -117,11 +111,10 @@ trait Text
      * @return non-empty-string
      *
      * @example 'Sapiente sunt omnis. Ut pariatur ad autem ducimus et. Voluptas rem voluptas sint modi dolorem amet.'
-     *
-     * @psalm-suppress MixedInferredReturnType
      */
     public function text(int $maxNbChars = 200): string
     {
+        /** @var non-empty-string */
         return $this->fakerGenerator->text($maxNbChars);
     }
 
@@ -140,11 +133,10 @@ trait Text
      * @return non-empty-string
      *
      * @example 'Alice, swallowing down her flamingo, and began by taking the little golden key'
-     *
-     * @psalm-suppress MixedInferredReturnType
      */
     public function realText(int $maxNbChars = 200, int $indexSize = 2): string
     {
+        /** @var non-empty-string */
         return $this->fakerGenerator->realText($maxNbChars, $indexSize);
     }
 
@@ -164,11 +156,10 @@ trait Text
      * @return non-empty-string
      *
      * @example 'Alice, swallowing down her flamingo, and began by taking the little golden key'
-     *
-     * @psalm-suppress MixedInferredReturnType
      */
     public function realTextBetween(int $minNbChars = 160, int $maxNbChars = 200, int $indexSize = 2): string
     {
+        /** @var non-empty-string */
         return $this->fakerGenerator->realTextBetween($minNbChars, $maxNbChars, $indexSize);
     }
 }
