@@ -8,14 +8,14 @@ on:
 
 jobs:
   ecs:
-    name: ECS - PHP ${{ matrix.php }} Ubuntu
+    name: ECS - PHP ${{ matrix.php-version }} Ubuntu
 
     strategy:
       fail-fast: false
       matrix:
-        php:
+        php-version:
           - '8.1'
-        dependencies:
+        composer-dependencies:
           - 'highest'
 
     runs-on: ubuntu-latest
@@ -27,7 +27,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: ${{ matrix.php }}
+          php-version: ${{ matrix.php-version }}
           extensions: json
           coverage: none
           tools: none
@@ -35,10 +35,10 @@ jobs:
       - name: Install dependencies
         uses: ramsey/composer-install@v2
         with:
-          dependency-versions: ${{ matrix.dependencies }}
+          dependency-versions: ${{ matrix.composer-dependencies }}
 
       - name: Run Easy Coding Standard
         run: |
           php -d memory_limit=-1 -d zend.enable_gc=0 -d error_reporting=-1 vendor/bin/ecs --ansi --no-progress-bar;
         env:
-          PHP_VERSION: ${{ matrix.php }}
+          PHP_VERSION: ${{ matrix.php-version }}

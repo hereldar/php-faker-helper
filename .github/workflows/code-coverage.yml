@@ -8,14 +8,14 @@ on:
 
 jobs:
   code-coverage:
-    name: Codecov & Coveralls - PHP ${{ matrix.php }} Ubuntu
+    name: Codecov & Coveralls - PHP ${{ matrix.php-version }} Ubuntu
 
     strategy:
       fail-fast: false
       matrix:
-        php:
+        php-version:
           - '8.1'
-        dependencies:
+        composer-dependencies:
           - 'highest'
 
     runs-on: ubuntu-latest
@@ -27,7 +27,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: ${{ matrix.php }}
+          php-version: ${{ matrix.php-version }}
           extensions: json, dom, libxml, mbstring, xml, xmlwriter
           coverage: xdebug
           tools: php-coveralls/php-coveralls
@@ -35,13 +35,13 @@ jobs:
       - name: Install dependencies
         uses: ramsey/composer-install@v2
         with:
-          dependency-versions: ${{ matrix.dependencies }}
+          dependency-versions: ${{ matrix.composer-dependencies }}
 
       - name: Run PHPUnit
         run: |
           php -d memory_limit=-1 -d zend.enable_gc=0 -d error_reporting=-1 vendor/bin/phpunit --colors=always --coverage-clover=coverage/clover.xml --coverage-text --coverage-cache=coverage/cache;
         env:
-          PHP_VERSION: ${{ matrix.php }}
+          PHP_VERSION: ${{ matrix.php-version }}
 
       - name: Send coverage results to Codecov
         uses: codecov/codecov-action@v3
@@ -55,4 +55,4 @@ jobs:
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           COVERALLS_SERVICE_NAME: github
-          PHP_VERSION: ${{ matrix.php }}
+          PHP_VERSION: ${{ matrix.php-version }}
